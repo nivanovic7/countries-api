@@ -42,3 +42,18 @@ body {
 
 main {
   padding: 1rem 2.5rem; }
+
+.search-field {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.8rem; }
+  .search-field svg {
+    margin: 0 1rem;
+    color: gray; }
+  .search-field input {
+    border: none;
+    color: gray;
+    font-size: 0.7rem;
+    width: 350px; }

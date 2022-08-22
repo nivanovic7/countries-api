@@ -56,22 +56,56 @@ main {
   padding: 1rem 2.5rem;
 }
 
-.search-field {
-  display: inline-flex;
-  align-items: center;
-  background-color: white;
-  padding: 0.7rem 1.3rem;
-  font-size: 0.8rem;
+.filtering-section {
+  display: flex;
+  justify-content: space-between;
 
-  svg {
-    margin: 0 1rem;
-    color: gray;
+  .search-field {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.7rem 1.3rem;
+    font-size: 0.8rem;
+
+    svg {
+      margin: 0 1rem;
+      color: gray;
+    }
+
+    input {
+      border: none;
+      color: gray;
+      font-size: 0.8rem;
+      width: 350px;
+    }
   }
 
-  input {
-    border: none;
-    color: gray;
-    font-size: 0.7rem;
-    width: 350px;
+  .filter-field {
+    position: relative;
+
+    &__btn {
+      padding: 0.7rem 1.3rem;
+      background-color: white;
+      border: none;
+      border-radius: 3px;
+    }
+
+    &__dropdown {
+      position: absolute;
+      width: 100%;
+      background-color: white;
+      top: calc(100% + 5px);
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    &__option {
+      padding: 0.4rem 1.3rem;
+      font-size: 0.8rem;
+    }
+
+    &__option:hover {
+      background-color: var(--color-white-darker);
+    }
   }
 }

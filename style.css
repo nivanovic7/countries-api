@@ -62,20 +62,34 @@ main {
       width: 350px; }
   .filtering-section .filter-field {
     position: relative; }
-    .filtering-section .filter-field__btn {
-      padding: 0.7rem 1.3rem;
-      background-color: white;
-      border: none;
-      border-radius: 3px; }
     .filtering-section .filter-field__dropdown {
       position: absolute;
       width: 100%;
       background-color: white;
       top: calc(100% + 5px);
       border-radius: 3px;
+      cursor: pointer;
+      transition: opacity 0.4s ease-in-out, transform 0.2s ease-in-out;
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none; }
+    .filtering-section .filter-field__btn {
+      padding: 0.7rem 1.3rem;
+      background-color: white;
+      border: none;
+      border-radius: 3px;
       cursor: pointer; }
+      .filtering-section .filter-field__btn .arrow {
+        transform: rotate(90deg);
+        display: inline-block;
+        font-weight: 900; }
     .filtering-section .filter-field__option {
       padding: 0.4rem 1.3rem;
       font-size: 0.8rem; }
     .filtering-section .filter-field__option:hover {
       background-color: var(--color-white-darker); }
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; }

@@ -83,13 +83,6 @@ main {
   .filter-field {
     position: relative;
 
-    &__btn {
-      padding: 0.7rem 1.3rem;
-      background-color: white;
-      border: none;
-      border-radius: 3px;
-    }
-
     &__dropdown {
       position: absolute;
       width: 100%;
@@ -97,6 +90,24 @@ main {
       top: calc(100% + 5px);
       border-radius: 3px;
       cursor: pointer;
+      transition: opacity 0.4s ease-in-out, transform 0.2s ease-in-out;
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &__btn {
+      padding: 0.7rem 1.3rem;
+      background-color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+
+      .arrow {
+        transform: rotate(90deg);
+        display: inline-block;
+        font-weight: 900;
+      }
     }
 
     &__option {
@@ -108,4 +119,10 @@ main {
       background-color: var(--color-white-darker);
     }
   }
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }

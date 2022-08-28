@@ -109,7 +109,7 @@ main {
   overflow: hidden;
   background-color: var(--color-white-light);
   width: 250px; }
-  .country img {
+  .country .flag {
     width: 100%;
     aspect-ratio: 9/6;
     box-shadow: 2px 0 5px 2px rgba(128, 128, 128, 0.438); }
@@ -122,6 +122,15 @@ main {
     .country__info .attr {
       font-weight: 600; }
 
+.single-country .back-btn {
+  padding: 0.45rem 1.5rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: 0px 0px 2px 2px rgba(77, 77, 77, 0.205);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer; }
+
 .single-country .country {
   display: flex;
   justify-content: space-between;
@@ -129,7 +138,8 @@ main {
   width: 100%;
   background-color: transparent; }
   .single-country .country .flag {
-    width: 550px; }
+    width: 550px;
+    box-shadow: none; }
   .single-country .country .country-info {
     display: flex;
     flex-direction: column;

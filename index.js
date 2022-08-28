@@ -102,7 +102,7 @@ const addSingleCountry = function (countryName) {
     .then((country) => {
       country = country[0];
       console.log(country);
-      const countryHtml = `<button class="back-btn">Back</button>
+      const countryHtml = `<button class="back-btn">&#8592 Back</button>
       <div class="country">
         <img
           src="${country.flags.svg}"
@@ -133,10 +133,10 @@ const addSingleCountry = function (countryName) {
                   country.tld
                 }</span>
               </p>
-              <p>Currencies: <span class="currencies">${currencies(
+              <p>Currencies: <span class="currencies">${populateCountryInfo(
                 country.currencies
               )}</span></p>
-              <p>Languages: <span class="languages">${languages(
+              <p>Languages: <span class="languages">${populateCountryInfo(
                 country.languages
               )}</span></p>
             </div>
@@ -147,38 +147,25 @@ const addSingleCountry = function (countryName) {
         </div>
       </div>`;
       document.querySelector(".single-country").innerHTML = countryHtml;
-      borders(country.borders);
+      addBorderCountries(country.borders);
     });
 };
 
-const currencies = function (data) {
+const populateCountryInfo = function (data) {
   let str = "";
-  for (const [key, value] of Object.entries(data)) {
-    console.log(str);
-    str += `${value.name}, `;
-  }
-
-  return str.slice(0, -2);
-};
-
-const languages = function (data) {
-  let str = "";
-  for (const [key, value] of Object.entries(data)) {
-    str += `${value}, `;
+  for (const value of Object.values(data)) {
+    str += value.name ? `${value.name}, ` : `${value}, `;
   }
   return str.slice(0, -2);
 };
 
-const borders = function (data) {
+const addBorderCountries = function (data) {
   const bordersContainer = document.querySelector(".borders");
-
   data.forEach((item) => {
     const span = document.createElement("span");
-
     fetch(`https://restcountries.com/v3.1/alpha/${item}`)
       .then((req) => req.json())
       .then((data) => {
-        console.log(data[0].name.common);
         span.textContent = data[0].name.common;
         bordersContainer.insertAdjacentElement("beforeend", span);
       });

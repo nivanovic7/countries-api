@@ -41,7 +41,7 @@ body {
   gap: 5px; }
 
 main {
-  padding: 1rem 2.5rem; }
+  padding: 2rem 3.5rem; }
 
 .filtering-section {
   display: flex;
@@ -50,23 +50,23 @@ main {
     border-radius: 5px;
     background-color: white;
     padding: 0.7rem 1.3rem; }
-  .filtering-section .search-field {
+  .filtering-section .search-form {
     display: inline-flex;
     align-items: center;
     font-size: 0.8rem; }
-    .filtering-section .search-field svg {
+    .filtering-section .search-form svg {
       margin: 0 1rem;
       color: gray;
       cursor: pointer; }
-    .filtering-section .search-field input {
+    .filtering-section .search-form input {
       border: none;
       color: gray;
       font-size: 0.8rem;
       width: 350px;
       outline: none; }
-  .filtering-section .filter-field {
+  .filtering-section .filter-form {
     position: relative; }
-    .filtering-section .filter-field__dropdown {
+    .filtering-section .filter-form__dropdown {
       position: absolute;
       background-color: white;
       left: 0;
@@ -78,21 +78,45 @@ main {
       transform: translateY(-10px);
       opacity: 0;
       pointer-events: none; }
-    .filtering-section .filter-field__btn {
+    .filtering-section .filter-form__btn {
       background-color: white;
       border: none;
       border-radius: 3px;
       cursor: pointer; }
-      .filtering-section .filter-field__btn .arrow {
+      .filtering-section .filter-form__btn .arrow {
         transform: rotate(90deg);
         display: inline-block;
         font-weight: 900; }
-    .filtering-section .filter-field__option {
+    .filtering-section .filter-form__option {
       padding: 0.4rem 1.3rem;
       font-size: 0.8rem; }
-    .filtering-section .filter-field__option:hover {
+    .filtering-section .filter-form__option:hover {
       background-color: var(--color-white-darker); }
   .filtering-section .active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto; }
+
+.countries-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5rem;
+  justify-content: space-between;
+  margin-top: 2rem; }
+
+.country {
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--color-white-light);
+  width: 250px; }
+  .country img {
+    width: 100%;
+    aspect-ratio: 9/6; }
+  .country__info {
+    padding: 1rem; }
+    .country__info-name {
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin: 0.5rem 0; }
+    .country__info .attr {
+      font-weight: 600; }

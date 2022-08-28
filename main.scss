@@ -53,7 +53,7 @@ body {
 }
 
 main {
-  padding: 1rem 2.5rem;
+  padding: 2rem 3.5rem;
 }
 
 .filtering-section {
@@ -65,7 +65,7 @@ main {
     background-color: white;
     padding: 0.7rem 1.3rem;
   }
-  .search-field {
+  .search-form {
     display: inline-flex;
     align-items: center;
     font-size: 0.8rem;
@@ -85,7 +85,7 @@ main {
     }
   }
 
-  .filter-field {
+  .filter-form {
     position: relative;
 
     &__dropdown {
@@ -129,5 +129,39 @@ main {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+}
+
+.countries-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.country {
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--color-white-light);
+  width: 250px;
+
+  img {
+    width: 100%;
+    aspect-ratio: 9/6;
+  }
+
+  &__info {
+    padding: 1rem;
+
+    &-name {
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+
+    .attr {
+      font-weight: 600;
+    }
   }
 }

@@ -19,27 +19,29 @@
         </div>
       </nav>
       <main>
-        <form class="filtering-section">
-          <div class="search-field">
+        <section class="filtering-section">
+          <form class="search-form" id="search-form">
             <svg class="icon icon-search">
               <use xlink:href="./icons/symbol-defs.svg#icon-search"></use>
             </svg>
             <input type="text" placeholder="Search for a country..." />
-          </div>
+          </form>
 
-          <div class="filter-field">
-            <button type="button" class="filter-field__btn">
+          <form class="filter-form" id="filter-form">
+            <button type="button" value="all" class="filter-form__btn">
               Filter by region <span class="arrow"> &gt</span>
             </button>
-            <div class="filter-field__dropdown">
-              <p class="filter-field__option">America</p>
-              <p class="filter-field__option">Africa</p>
-              <p class="filter-field__option">Asia</p>
-              <p class="filter-field__option">Europe</p>
-              <p class="filter-field__option">Oceania</p>
+            <div class="filter-form__dropdown">
+              <p class="filter-form__option">America</p>
+              <p class="filter-form__option">Africa</p>
+              <p class="filter-form__option">Asia</p>
+              <p class="filter-form__option">Europe</p>
+              <p class="filter-form__option">Oceania</p>
             </div>
-          </div>
-        </form>
+          </form>
+        </section>
+
+        <section class="countries-list"></section>
       </main>
     </div>
     <script src="index.js"></script>

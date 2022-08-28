@@ -89,14 +89,19 @@ const displayAllCountries = function (data) {
   });
 };
 
-const displaySingleCountry = function (data) {
+const displaySingleCountry = function () {
   document.querySelector(".filtering-section").classList.add("hide");
   document.querySelector(".countries-list").classList.add("hide");
   document.querySelector(".single-country").classList.remove("hide");
 };
 
+const displayMultipleCountries = function () {
+  document.querySelector(".filtering-section").classList.remove("hide");
+  document.querySelector(".countries-list").classList.remove("hide");
+  document.querySelector(".single-country").classList.add("hide");
+};
+
 const addSingleCountry = function (countryName) {
-  console.log("sdfnsdf");
   fetch(`https://restcountries.com/v3.1/name/${countryName}`)
     .then((res) => res.json())
     .then((country) => {
@@ -148,6 +153,9 @@ const addSingleCountry = function (countryName) {
       </div>`;
       document.querySelector(".single-country").innerHTML = countryHtml;
       addBorderCountries(country.borders);
+      document
+        .querySelector(".back-btn")
+        .addEventListener("click", displayMultipleCountries);
     });
 };
 
@@ -161,6 +169,7 @@ const populateCountryInfo = function (data) {
 
 const addBorderCountries = function (data) {
   const bordersContainer = document.querySelector(".borders");
+  if (!data) return;
   data.forEach((item) => {
     const span = document.createElement("span");
     fetch(`https://restcountries.com/v3.1/alpha/${item}`)

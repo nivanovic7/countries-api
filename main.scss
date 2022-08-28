@@ -60,11 +60,14 @@ main {
   display: flex;
   justify-content: space-between;
 
+  & > * {
+    border-radius: 5px;
+    background-color: white;
+    padding: 0.7rem 1.3rem;
+  }
   .search-field {
     display: inline-flex;
     align-items: center;
-    background-color: white;
-    padding: 0.7rem 1.3rem;
     font-size: 0.8rem;
 
     svg {
@@ -87,10 +90,11 @@ main {
 
     &__dropdown {
       position: absolute;
-      width: 100%;
       background-color: white;
+      left: 0;
+      border-radius: 5px;
+      width: 100%;
       top: calc(100% + 5px);
-      border-radius: 3px;
       cursor: pointer;
       transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
       transform: translateY(-10px);
@@ -99,7 +103,6 @@ main {
     }
 
     &__btn {
-      padding: 0.7rem 1.3rem;
       background-color: white;
       border: none;
       border-radius: 3px;
